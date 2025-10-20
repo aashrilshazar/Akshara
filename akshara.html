@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Akshara — Rights‑Cleared, Provenance‑Rich Training Data</title>
+  <meta name="description" content="Akshara supplies novel, rights‑cleared, provenance‑rich text corpora from under‑digitized analog sources — engineered for frontier AI labs." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="robots" content="index,follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <meta property="og:title" content="Akshara — Rights‑Cleared, Provenance‑Rich Training Data" />
+  <meta property="og:description" content="Novel text corpora from non‑web analog archives. Clear licensing. Verifiable provenance. Contamination‑controlled." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-akshara.png" />
+  <meta property="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root {
+      --bg: #0b0b0c;
+      --bg-soft: #111113;
+      --panel: #15161a;
+      --text: #eceff4;
+      --muted: #9aa3af;
+      --accent: #4a9eff;
+      --accent-2: #7aa8ff;
+      --ok: #22c55e;
+      --warn: #f59e0b;
+      --danger: #ef4444;
+      --ring: 0 0 0 1px rgba(74,158,255,.25), 0 10px 30px rgba(74,158,255,.15);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 800px at 20% 10%,rgba(74,158,255,.08),transparent 60%), radial-gradient(900px 700px at 90% 20%,rgba(122,168,255,.06),transparent 60%), var(--bg);color:var(--text);line-height:1.6}
+    a{color:var(--text);text-decoration:none}
+    /* Nav */
+    .nav{position:fixed;inset-inline:0;top:0;z-index:50;backdrop-filter: blur(10px);background:rgba(11,11,12,.55);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem}
+    .brand{display:flex;align-items:center;gap:.625rem;font-weight:800;letter-spacing:-.02em}
+    .brand-dot{width:.6rem;height:.6rem;border-radius:999px;background:var(--accent)}
+    .nav a.cta{padding:.65rem 1rem;background:var(--accent);border-radius:999px;font-weight:600;box-shadow:var(--ring)}
+    .nav-links{display:flex;gap:1rem;align-items:center}
+    .nav-links a{opacity:.9}
+    .nav-links a:hover{opacity:1}
+    /* Sections */
+    section{padding:6rem 1.25rem}
+    .container{max-width:1200px;margin:0 auto}
+    /* Hero */
+    .hero{padding-top:9rem;padding-bottom:5rem}
+    .h1{font-size:clamp(2.6rem,5vw,4.25rem);line-height:1.05;margin:0 0 1rem;background:linear-gradient(130deg,#fff, #bcd6ff 35%, #4a9eff 75%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:800}
+    .lead{font-size:clamp(1.05rem,2.2vw,1.25rem);color:var(--muted);max-width:860px}
+    .hero-cta{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem}
+    .btn{display:inline-flex;gap:.5rem;align-items:center;border-radius:.8rem;padding:.9rem 1.1rem;background:var(--panel);border:1px solid rgba(255,255,255,.06)}
+    .btn.primary{background:var(--accent);color:#05060a;box-shadow:var(--ring)}
+    .badgebar{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem;color:#cbd5e1}
+    .badge{font-size:.8rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:.35rem .6rem;border-radius:999px}
+    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:2rem}
+    .stat{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);padding:1rem;border-radius:1rem}
+    .stat .k{font-size:1.6rem;font-weight:800}
+    .stat .l{font-size:.85rem;color:var(--muted)}
+    /* Why */
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);padding:1.25rem;border-radius:1rem}
+    .card h3{margin-top:.25rem;margin-bottom:.5rem;font-size:1.15rem}
+    .muted{color:var(--muted)}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;}
+    /* Packs */
+    .packs{margin-top:1rem}
+    .pack{display:flex;flex-direction:column;gap:.5rem;padding:1.1rem;border:1px solid rgba(255,255,255,.08);border-radius:1rem;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01))}
+    .pack h4{margin:0}
+    .tags{display:flex;flex-wrap:wrap;gap:.4rem}
+    .tag{font-size:.75rem;background:rgba(74,158,255,.15);border:1px solid rgba(74,158,255,.35);color:#dbe9ff;border-radius:999px;padding:.2rem .5rem}
+    .kv{display:flex;flex-wrap:wrap;gap:.75rem;font-size:.92rem}
+    .kv > div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:.35rem .55rem;border-radius:.6rem}
+    /* Quality */
+    .checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:.5rem}
+    .li{display:flex;gap:.6rem;align-items:flex-start}
+    .dot{width:.7rem;height:.7rem;border-radius:999px;background:linear-gradient(180deg,#8bd2ff,#4a9eff);box-shadow:0 0 0 2px rgba(74,158,255,.15)}
+    /* Footer */
+    footer{padding:2rem 1.25rem;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.35)}
+    footer .foot{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between}
+    .foot .small{font-size:.9rem}
+    /* Responsive */
+    @media (max-width: 1000px){.grid-3{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr 1fr}}
+    @media (max-width: 640px){.grid-3{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.nav-links{display:none}}
+  </style>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Akshara",
+    "url": "https://akshara.ai",
+    "description": "Supplier of rights-cleared, provenance-rich training corpora digitized from under-digitized analog sources.",
+    "email": "hello@akshara.ai"
+  }
+  </script>
+</head>
+<body>
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand"><span class="brand-dot"></span>Akshara</div>
+      <div class="nav-links">
+        <a href="#why">Why Akshara</a>
+        <a href="#packs">Corpora</a>
+        <a href="#quality">Quality & Safety</a>
+      </div>
+      <a class="cta" href="#contact">Request sample</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="container">
+      <h1 class="h1">Digitizing 1T pages of analog human knowledge to solve data scarcity.</h1>
+      <p class="lead">We digitize non‑web analog archives into <strong>LLM‑ready, deduplicated, contamination‑controlled</strong> datasets with verifiable provenance for pre‑training, continual training, alignment, and evals.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#contact">Request a secure sample</a>
+        <a class="btn" href="#packs">View corpus SKUs</a>
+        <a class="btn" href="#quality">Read QA & licensing</a>
+      </div>
+      <div class="badgebar" aria-label="standards and frameworks">
+        <span class="badge">OAIS (ISO 14721)</span>
+        <span class="badge">FADGI 4‑Star Imaging</span>
+        <span class="badge">METS/ALTO + IIIF</span>
+        <span class="badge">NDSA Levels</span>
+        <span class="badge">Chain‑of‑Custody Provenance</span>
+      </div>
+      <div class="stats" role="list" aria-label="headline stats">
+        <div class="stat" role="listitem"><div class="k" id="s1">0</div><div class="l">pages digitized to date.</div></div>
+        <div class="stat" role="listitem"><div class="k" id="s2">0</div><div class="l">tokens delivered.</div></div>
+        <div class="stat" role="listitem"><div class="k" id="s3">1T</div><div class="l">pages by 2032.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Akshara -->
+  <section id="why">
+    <div class="container">
+      <h2 style="margin:0 0 .75rem;font-size:1.6rem">Why Akshara?</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>True Novelty</h3>
+          <p class="muted">Non‑web sources absent from existing corpora. Fingerprinted and deduped to prevent contamination.</p>
+        </div>
+        <div class="card">
+          <h3>Rights‑Cleared</h3>
+          <p class="muted">Commercial training rights acquired at source with per‑document metadata and indemnity options.</p>
+        </div>
+        <div class="card">
+          <h3>Verifiable Provenance</h3>
+          <p class="muted">Complete chain‑of‑custody with checksums, timestamps, and rights assertions for every page.</p>
+        </div>
+        <div class="card">
+          <h3>Engineered for LLMs</h3>
+          <p class="muted">Structured text with layout preservation, language tags, and domain taxonomy in training‑ready shards.</p>
+        </div>
+        <div class="card">
+          <h3>Quality & Safety Gates</h3>
+          <p class="muted">OCR CER ≤ 0.5–1.5%, optional PII filtering, and content safety review before shipment.</p>
+        </div>
+        <div class="card">
+          <h3>Operational Scale</h3>
+          <p class="muted">Industrial pipeline processing millions of pages daily with secure cloud or air‑gapped delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Corpus SKUs -->
+  <section id="packs">
+    <div class="container">
+      <h2 style="margin:0 0 .75rem;font-size:1.6rem">Corpus SKUs</h2>
+      <p class="muted">Each pack includes page images, ALTO XML, JSONL text, and metadata. Rights and jurisdictions noted per record. Samples available under NDA.</p>
+      <div class="grid-3 packs" role="list">
+        <div class="pack" role="listitem">
+          <h4>Aviation Safety Pack</h4>
+          <div class="tags"><span class="tag">Safety</span><span class="tag">Engineering</span><span class="tag">Regulatory</span></div>
+          <div class="kv"><div>~100k pages</div><div>~76.5M tokens</div><div>1950–2005 focus</div></div>
+          <p class="muted">Airworthiness directives, incident analyses, OEM manuals, and bulletin chains with provenance and revision linkage.</p>
+        </div>
+        <div class="pack" role="listitem">
+          <h4>BioReg & Clinical Pack</h4>
+          <div class="tags"><span class="tag">Biopharma</span><span class="tag">Regulatory</span><span class="tag">Clinical</span></div>
+          <div class="kv"><div>~20k pages</div><div>~15M tokens</div><div>1990–2015 focus</div></div>
+          <p class="muted">Reg filings, monographs, dosing standards, and gray literature with ICD‑10/ATC mapping at page‑level.</p>
+        </div>
+        <div class="pack" role="listitem">
+          <h4>Energy & Nuclear Reg Pack</h4>
+          <div class="tags"><span class="tag">Energy</span><span class="tag">Nuclear</span><span class="tag">Safety</span></div>
+          <div class="kv"><div>~20k pages</div><div>~15M tokens</div><div>1960–2000 focus</div></div>
+          <p class="muted">Plant manuals, NRC/IAEA circulars, inspection reports, and safety procedures with hierarchy preservation.</p>
+        </div>
+        <div class="pack" role="listitem">
+          <h4>Gov‑Law Reasoning Pack</h4>
+          <div class="tags"><span class="tag">Legal</span><span class="tag">Policy</span><span class="tag">Reasoning</span></div>
+          <div class="kv"><div>~15k pages</div><div>~11.3M tokens</div></div>
+          <p class="muted">Administrative decisions, legislative analyses, and committee reports with citation graphs.</p>
+        </div>
+        <div class="pack" role="listitem">
+          <h4>Low‑Resource Parallel Pack</h4>
+          <div class="tags"><span class="tag">Parallel</span><span class="tag">Multilingual</span><span class="tag">Low‑resource</span></div>
+          <div class="kv"><div>~20k pages</div><div>~15M tokens</div><div>20+ language pairs</div></div>
+          <p class="muted">Government notices and manuals with aligned bilingual segments, page‑level alignment indices, and script labels.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality & Safety -->
+  <section id="quality">
+    <div class="container">
+      <h2 style="margin:0 0 .75rem;font-size:1.6rem">Quality, Safety, & Provenance</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Rights & Provenance</h3>
+          <div class="checklist">
+            <div class="li"><span class="dot"></span><div>Per‑record rights fields (scope, term, territories).</div></div>
+            <div class="li"><span class="dot"></span><div>Signed source agreements; chain‑of‑title stored with <span class="mono">source_id</span>.</div></div>
+            <div class="li"><span class="dot"></span><div>Page‑level checksums + capture metadata.</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Contamination Control</h3>
+          <div class="checklist">
+            <div class="li"><span class="dot"></span><div>Dedup/near‑dup vs known web corpora.</div></div>
+            <div class="li"><span class="dot"></span><div>Leakage scans for evaluation sets; exclusion lists on request.</div></div>
+            <div class="li"><span class="dot"></span><div>Distribution ledger to track shipments and exclusivity windows.</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Data Quality</h3>
+          <div class="checklist">
+            <div class="li"><span class="dot"></span><div>Target OCR CER ≤ 0.5–1.5% (Latin scripts) via ensemble OCR.</div></div>
+            <div class="li"><span class="dot"></span><div>Layout‑aware text flow reconstruction; table capture options.</div></div>
+            <div class="li"><span class="dot"></span><div>Sampling harness with page‑level citations for QA.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Data Room -->
+  <section id="contact">
+    <div class="container">
+      <h2 style="margin:0 0 .75rem;font-size:1.6rem">Request a Sample or Data Room Access</h2>
+      <p class="muted">We share pack summaries and 100‑page samples under mutual NDA. Please include your intended use (pre‑training, CT, alignment, evals), license scope, and desired volumes.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="mailto:hello@akshara.ai?subject=Akshara%20Sample%20Request&body=Hi%20Akshara%20team%2C%0A%0AWe%27d%20like%20to%20request%20a%20sample%20and%20data%20room%20access.%20Our%20intended%20use%20is%3A%20%5Bpre-training%20%2F%20continual%20training%20%2F%20alignment%20%2F%20evals%5D.%0A%0ALicense%20scope%3A%20%5Bstandard%20%2F%20field-limited%20%2F%20temporal%20exclusivity%20%2F%20exclusive%5D%0AEstimated%20volume%3A%20%5Bpages%20%2F%20tokens%5D%0ARequired%20QC%3A%20%5Btargets%5D%0ADelivery%3A%20%5BS3%20%2F%20GCS%20%2F%20Snowflake%20%2F%20air-gapped%5D%0A%0AThank%20you!">Email hello@akshara.ai</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot">
+      <div class="small">© 2025 Akshara — Immortalize human knowledge.</div>
+      <div class="small">That which does not perish.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Animated stats (demo values)
+    const animateNumber = (el, to, dur=1600) => {
+      const start = performance.now();
+      const from = 0;
+      const step = (t) => {
+        const p = Math.min(1, (t - start)/dur);
+        const v = Math.floor(from + (to-from)*p);
+        el.textContent = Intl.NumberFormat('en', {notation:'compact'}).format(v);
+        if(p<1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    animateNumber(document.getElementById('s1'), 100000);
+    animateNumber(document.getElementById('s2'), 76000000);
+
+    // Basic sticky shadow on scroll
+    const nav = document.querySelector('.nav');
+    const shadow = () => {
+      if (window.scrollY > 10) nav.style.boxShadow = '0 10px 30px rgba(0,0,0,.25)';
+      else nav.style.boxShadow = 'none';
+    };
+    document.addEventListener('scroll', shadow, {passive:true});
+    shadow();
+  </script>
+</body>
+</html>
