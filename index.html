@@ -4,17 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Akshara Data</title>
-  <meta name="description" content="Akshara supplies novel, rights‑cleared, provenance‑rich text corpora from under‑digitized analog sources — engineered for frontier AI labs." />
+  <meta name="description" content="Akshara supplies novel, rights-cleared, provenance-rich text corpora from under-digitized analog sources — engineered for frontier AI labs." />
   <meta name="theme-color" content="#0a0a0a" />
   <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://aksharadata.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <meta property="og:title" content="Akshara Data" />
-  <meta property="og:description" content="Novel text corpora from non‑web analog archives. Clear licensing. Verifiable provenance. Contamination‑controlled." />
+  <meta property="og:description" content="Novel text corpora from non-web analog archives. Clear licensing. Verifiable provenance. Contamination-controlled." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/og-akshara.png" />
+  <meta property="og:url" content="https://aksharadata.com" />
+  <meta property="og:site_name" content="Akshara Data" />
   <meta property="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Akshara Data" />
+  <meta name="twitter:description" content="Novel text corpora digitized from under-digitized analog sources with clear licensing and verifiable provenance." />
+  <meta name="twitter:image" content="https://aksharadata.com/og-akshara.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any" />
+  <link rel="icon" type="image/png" href="/logo-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="/logo-192.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <style>
     :root {
@@ -90,11 +100,45 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Akshara",
-    "url": "https://aksharadata.com",
-    "description": "Supplier of rights-cleared, provenance-rich training corpora digitized from under-digitized analog sources.",
-    "email": "aashril@aksharadata.com"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://aksharadata.com/#organization",
+        "name": "Akshara Data",
+        "url": "https://aksharadata.com",
+        "description": "Supplier of rights-cleared, provenance-rich training corpora digitized from under-digitized analog sources.",
+        "email": "mailto:aashril@aksharadata.com",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://aksharadata.com/#logo",
+          "url": "https://aksharadata.com/logo.svg",
+          "width": 256,
+          "height": 256
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/aashril-s-02a690204/"
+        ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "email": "mailto:aashril@aksharadata.com",
+            "availableLanguage": ["en"]
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://aksharadata.com/#website",
+        "url": "https://aksharadata.com",
+        "name": "Akshara Data",
+        "alternateName": "Akshara",
+        "inLanguage": "en",
+        "publisher": {
+          "@id": "https://aksharadata.com/#organization"
+        }
+      }
+    ]
   }
   </script>
 </head>
